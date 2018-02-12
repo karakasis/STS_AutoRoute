@@ -12,6 +12,7 @@ Launch :
 (If you delete log.txt created within the root folder of the .jar then step 2 will repeat in the next launch.)
 
 Tutorial :
+  
   Algorithms : 
   1. Brute Force :
      Define priorities by setting the combo boxes on the right side of the icons on the Set Priorities Panel.
