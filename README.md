@@ -1,7 +1,7 @@
 # STS_AutoRoute
-Assisting program written on Java for Slay the Spire from Mega Crit Games. 
+<i>Assisting program written on Java for Slay the Spire from Mega Crit Games. </i>
 
-Launch : 
+<b>Launch : </b>
 1. Run STS_AutoRoute.exe or STS_AutoRoute.jar (Java required)
 2. Select this file : SlayTheSpire.log located within your Steam folder.
 3. Open Slay the Spire and start a new run.
@@ -11,10 +11,11 @@ Launch :
 7. After every boss kill you will have to repeat steps 4-5. (Or wait until log is refreshed but that would take a while)
 (If you delete log.txt created within the root folder of the .jar then step 2 will repeat in the next launch.)
 
-Tutorial :
+<b>Tutorial :</b>
   
   Algorithms : 
   1. Brute Force :
+  
      Define priorities by setting the combo boxes on the right side of the icons on the Set Priorities Panel.
      Example -> Rest 1
                 Elite 2
@@ -25,6 +26,7 @@ Tutorial :
      Then do the same thing with the remaining routes and keep only those with the most Elites and exclude ALL other routes.
      Repeat until all priorities have been consumed.
   2. Weighted Score :
+  
      A more fluid aproach. After defining priorities the algorithm will assign weights to every category of rooms.
      Based on your priorities a score will be given to every route and the best scores will then be selected and previewed.
      
