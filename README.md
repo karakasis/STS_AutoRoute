@@ -31,16 +31,19 @@ Tutorial :
  (You can swap/toggle algorithms from the top banner or the Settings icon > Change Algorithm)
   
   Skip Elite Box : 
+  
   Will try to avoid Elites if possible (in some cases you can't skip an Elite fight)
   If it is possible, then it will find the optimal routes based on the Algorithm set and the priorities.
   
   Route from Current Node :
+  
   After finding a route, you can click on the rooms you have visited, effectivelly making a "path" of where you have been.
   In any point you can choose to find a new route, suited on your current situation by going through the Settings icon to Route 
   from Current Node. This will redirect you back to Set Priorities (explained above on Algorithms Section). By finding a new Route 
   your current path will not get erased.
   
   Change Route :
+  
   In some cases you will be given multiple (mostly 2 from what I have experienced) routes. When this is possible a visual icon will 
   pop-up on the left of your screen with the Slay the Spire map icon and 2 arrows. You can change the routes from the arrows or from the
   Settings icon > Change Route.
