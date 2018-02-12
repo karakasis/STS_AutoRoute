@@ -317,7 +317,6 @@ public class GUI extends javax.swing.JFrame {
         cursor = newImage.createGraphics();
 
 
-
 // elsewhere
         //setupLayout();
         */
@@ -1255,11 +1254,6 @@ public class GUI extends javax.swing.JFrame {
         jLabel3.setMaximumSize(new java.awt.Dimension(850, 1550));
         jLabel3.setMinimumSize(new java.awt.Dimension(870, 745));
         jLabel3.setPreferredSize(new java.awt.Dimension(870, 745));
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
-            }
-        });
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -1476,12 +1470,6 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_closeActionPerformed
-
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        // TODO add your handling code here:
-        this.setState(JFrame.ICONIFIED);
-
-    }//GEN-LAST:event_jLabel3MouseClicked
 
     private boolean uShouldClick = false;
 
