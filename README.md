@@ -11,7 +11,7 @@ Launch :
 7. After every boss kill you will have to repeat steps 4-5. (Or wait until log is refreshed but that would take a while)
 (If you delete log.txt created within the root folder of the .jar then step 2 will repeat in the next launch.)
 
-Tutorial : 
+Tutorial :
   Algorithms : 
   1. Brute Force :
      Define priorities by setting the combo boxes on the right side of the icons on the Set Priorities Panel.
