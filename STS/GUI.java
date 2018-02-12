@@ -301,6 +301,8 @@ public class GUI extends javax.swing.JFrame {
         imgStepL1M = new javax.swing.ImageIcon(this.getClass().getResource("/map/stepLeft/step1M.png"));
         imgStepR0M = new javax.swing.ImageIcon(this.getClass().getResource("/map/stepRight/step0M.png"));
         imgStepR1M = new javax.swing.ImageIcon(this.getClass().getResource("/map/stepRight/step1M.png"));
+        brute = new javax.swing.ImageIcon(this.getClass().getResource("/map/bruteforce.png"));
+        weight = new javax.swing.ImageIcon(this.getClass().getResource("/map/weight.png"));
         /*
         cursorInput = null;
         try {
@@ -314,8 +316,7 @@ public class GUI extends javax.swing.JFrame {
 
         cursor = newImage.createGraphics();
 
-        brute = new javax.swing.ImageIcon(this.getClass().getResource("/map/bruteforce.png"));
-        weight = new javax.swing.ImageIcon(this.getClass().getResource("/map/weight.png"));
+
 
 // elsewhere
         //setupLayout();
