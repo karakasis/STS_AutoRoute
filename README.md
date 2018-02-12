@@ -50,7 +50,10 @@
   pop-up on the left of your screen with the Slay the Spire map icon and 2 arrows. You can change the routes from the arrows or from the
   Settings icon > Change Route.
   
+  
+  
   Some final words,
+  
     I am a post graduate Student of Computer Science and this project is far from being professional or completed. Just an attempt of
     mine, honing my skills in Java and having fun. I have been using this app for some days now and it can be relaxing in some
     situations when I am too lazy to plan my route. As far as future update of this, I am not aware at this point, since I am in 
