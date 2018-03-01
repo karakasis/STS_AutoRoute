@@ -1,7 +1,8 @@
 # STS_AutoRoute
 <i>Assisting program written on Java for Slay the Spire from Mega Crit Games. </i>
 
-<b>Launch : </b>
+##Launch
+
 - 1. Run STS_AutoRoute.exe or STS_AutoRoute.jar (Java required)
 - 2. Select this file : SlayTheSpire.log located within your Steam folder.
 - 3. Open Slay the Spire and start a new run.
@@ -11,7 +12,7 @@
 - 7. After every boss kill you will have to repeat steps 4-5. (Or wait until log is refreshed but that would take a while)
 (If you delete log.txt created within the root folder of the .jar then step 2 will repeat in the next launch.)
 
-<b>Tutorial :</b>
+##Tutorial
   
   Algorithms : 
   - Brute Force :  
