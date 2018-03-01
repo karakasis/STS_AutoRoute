@@ -1,5 +1,5 @@
 # STS_AutoRoute
-*Assisting program written on Java for Slay the Spire from Mega Crit Games.*
+*Assisting program written on Java for [Slay the Spire](http://store.steampowered.com/app/646570/Slay_the_Spire/).*
 
 ## Launch
 
