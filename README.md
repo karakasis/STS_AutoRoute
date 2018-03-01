@@ -1,21 +1,21 @@
 # STS_AutoRoute
-<i>Assisting program written on Java for Slay the Spire from Mega Crit Games. </i>
+*Assisting program written on Java for Slay the Spire from Mega Crit Games.*
 
-##Launch
+## Launch
 
-- 1. Run STS_AutoRoute.exe or STS_AutoRoute.jar (Java required)
-- 2. Select this file : SlayTheSpire.log located within your Steam folder.
-- 3. Open Slay the Spire and start a new run.
-- 4. From the moment you see the map of the run, close the game and a pop up will appear.
-- 5. Load the new Layout on the app, and then open the game back either from Steam or from the top left Steam icon.
-- 6. Optimize preferences and find route.
-- 7. After every boss kill you will have to repeat steps 4-5. (Or wait until log is refreshed but that would take a while)
+- Run STS_AutoRoute.exe or STS_AutoRoute.jar (Java required)
+- Select this file : SlayTheSpire.log located within your Steam folder.
+- Open Slay the Spire and start a new run.
+- From the moment you see the map of the run, close the game and a pop up will appear.
+- Load the new Layout on the app, and then open the game back either from Steam or from the top left Steam icon.
+- Optimize preferences and find route.
+- After every boss kill you will have to repeat steps 4-5. (Or wait until log is refreshed but that would take a while)
 (If you delete log.txt created within the root folder of the .jar then step 2 will repeat in the next launch.)
 
-##Tutorial
+## Tutorial
   
   Algorithms : 
-  - Brute Force :  
+  - *Brute Force* :  
      Define priorities by setting the combo boxes on the right side of the icons on the Set Priorities Panel.
      Example -> - Rest 1
                 - Elite 2
@@ -25,7 +25,7 @@
      This will find the routes that have most Rest sites and exclude ALL other routes with less rest sites than the specified maximum.
      Then do the same thing with the remaining routes and keep only those with the most Elites and exclude ALL other routes.
      Repeat until all priorities have been consumed.
-  - Weighted Score :  
+  - *Weighted Score* :  
      A more fluid aproach. After defining priorities the algorithm will assign weights to every category of rooms.
      Based on your priorities a score will be given to every route and the best scores will then be selected and previewed.
      
@@ -48,12 +48,12 @@
   
   Some final words,
   
-    I am a post graduate Student of Computer Science and this project is far from being professional or completed. Just an attempt of
+    *I am a post graduate Student of Computer Science and this project is far from being professional or completed. Just an attempt of
     mine, honing my skills in Java and having fun. I have been using this app for some days now and it can be relaxing in some
     situations when I am too lazy to plan my route. As far as future update of this, I am not aware at this point, since I am in 
     university and I might not find time to update. If anyone is interested in helping, improving or anything on this project let me
     know!
     
     Buggy approach : My knowledge goes as far as creating this and playing around with the log files to make it happen. If there is any
-    other possible way to fix the open/close thing I would be more than happy to review .
+    other possible way to fix the open/close thing I would be more than happy to review .*
    
