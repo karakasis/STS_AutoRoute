@@ -8,6 +8,7 @@
   is located in your root Steam folder 
   
   C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\sendToDevs\logs\SlayTheSpire.log
+  
   Make sure to delete your old setting log.txt, and replace with the new path above!
   No restarts are needed! 
 
