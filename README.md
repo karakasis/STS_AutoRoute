@@ -7,7 +7,7 @@
   Everything runs smoothly! I can't beleive it works properly now. BETA or Regular branch just update the log file path to 
   
   
-  C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\sendToDevs\logs\SlayTheSpire.log
+  **C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\sendToDevs\logs\SlayTheSpire.log**
   
   and no need for restart, everything is automatic now! Have fun.
   
