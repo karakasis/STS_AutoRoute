@@ -1,12 +1,22 @@
 # STS_AutoRoute
 *Assisting program written on Java for [Slay the Spire](http://store.steampowered.com/app/646570/Slay_the_Spire/).*
 
+## Big update
+
+  Great news!!
+  Looks like the issue with the log files is all gone now. If you are in the beta the working log SlayTheSpire.log
+  is located in your root Steam folder 
+  C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\sendToDevs\logs\SlayTheSpire.log
+  Make sure to delete your old setting log.txt, and replace with the new path above!
+  No restarts are needed! 
+
 ## Launch
 
 - Run STS_AutoRoute.exe or STS_AutoRoute.jar (Java required)
-- Select this file : SlayTheSpire.log located within your Steam folder.
+- Select this file : SlayTheSpire.log located within your Steam folder. (BETA: \sendToDevs\logs\SlayTheSpire.log)
 - Open Slay the Spire and start a new run.
-- From the moment you see the map of the run, close the game and a pop up will appear.
+- From the moment you see the map of the run, close the game and a pop up will appear. 
+  (Will have to test in the weekend 24-25 March, probably this has been fixed)
 - Load the new Layout on the app, and then open the game back either from Steam or from the top left Steam icon.
 - Optimize preferences and find route.
 - After every boss kill you will have to repeat steps 4-5. (Or wait until log is refreshed but that would take a while)
