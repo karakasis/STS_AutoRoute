@@ -6,6 +6,7 @@
   Great news!!
   Looks like the issue with the log files is all gone now. If you are in the beta the working log SlayTheSpire.log
   is located in your root Steam folder 
+  
   C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\sendToDevs\logs\SlayTheSpire.log
   Make sure to delete your old setting log.txt, and replace with the new path above!
   No restarts are needed! 
