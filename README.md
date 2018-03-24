@@ -1,6 +1,10 @@
 # STS_AutoRoute
 *Assisting program written on Java for [Slay the Spire](http://store.steampowered.com/app/646570/Slay_the_Spire/).*
 
+![alt text](https://raw.githubusercontent.com/karakasis/STS_AutoRoute/master-project/new_images/tutorial/STS%20Screenshots/2.png)
+![alt text](https://raw.githubusercontent.com/karakasis/STS_AutoRoute/master-project/new_images/tutorial/STS%20Screenshots/1.png)
+![alt text](https://raw.githubusercontent.com/karakasis/STS_AutoRoute/master-project/new_images/tutorial/STS%20Screenshots/3.png)
+
 ## Big update
 
   UPDATE #2
