@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="STS_AutoRoute">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/STS_AutoRoute.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
