@@ -5,29 +5,11 @@
 ![alt text](https://raw.githubusercontent.com/karakasis/STS_AutoRoute/master-project/new_images/tutorial/STS%20Screenshots/1.png)
 ![alt text](https://raw.githubusercontent.com/karakasis/STS_AutoRoute/master-project/new_images/tutorial/STS%20Screenshots/3.png)
 
-## Big update
 
-  UPDATE #2
-  Everything runs smoothly! I can't beleive it works properly now. BETA or Regular branch just update the log file path to 
-  
-  
-  **C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\sendToDevs\logs\SlayTheSpire.log**
-  
-  and no need for restart, everything is automatic now! Have fun.
-  
-  UPDATE #1
-  Great news!!
-  Looks like the issue with the log files is all gone now. If you are in the beta the working log SlayTheSpire.log
-  is located in your root Steam folder 
-  
-  C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\sendToDevs\logs\SlayTheSpire.log
-  
-  Make sure to delete your old setting log.txt, and replace with the new path above!
-  No restarts are needed! 
 
 ## Launch
 
-  (No need for restart anymore just look at UPDATE#2 above. I will update repo in the weekend 24-25 March.)
+  (No need for restart anymore just look at UPDATE#2 below.)
   
 - Run STS_AutoRoute.exe or STS_AutoRoute.jar (Java required)
 - Select this file : SlayTheSpire.log located within your Steam folder. (BETA: \sendToDevs\logs\SlayTheSpire.log)
@@ -70,7 +52,25 @@
   pop-up on the left of your screen with the Slay the Spire map icon and 2 arrows. You can change the routes from the arrows or from the
   Settings icon > Change Route.  
   
+  ## Big update
+
+  UPDATE #2
+  Everything runs smoothly! I can't beleive it works properly now. BETA or Regular branch just update the log file path to 
   
+  
+  **C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\sendToDevs\logs\SlayTheSpire.log**
+  
+  and no need for restart, everything is automatic now! Have fun.
+  
+  UPDATE #1
+  Great news!!
+  Looks like the issue with the log files is all gone now. If you are in the beta the working log SlayTheSpire.log
+  is located in your root Steam folder 
+  
+  C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\sendToDevs\logs\SlayTheSpire.log
+  
+  Make sure to delete your old setting log.txt, and replace with the new path above!
+  No restarts are needed! 
   
   *Some final words,*
   
