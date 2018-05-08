@@ -20,6 +20,15 @@
 - After every boss kill you will have to repeat steps 4-5. (Or wait until log is refreshed but that would take a while)
 (If you delete log.txt created within the root folder of the .jar then step 2 will repeat in the next launch.)
 
+## Support me
+
+<form action="paypal.me/karakasisx" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="RGQ8NSYPA59FL">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
+</form>
+
 ## Tutorial
   
   Algorithms : 
