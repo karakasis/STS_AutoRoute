@@ -224,11 +224,15 @@ public class GUI extends javax.swing.JFrame {
         curLabel.setIcon(curL);
         gp.add(curLabel);
          */
-        cameraButton.setVisible(true);
+        cameraButton.setVisible(false);
         logo.setVisible(false);
         routeIDLabel.setVisible(false);
+        routeIDContainerLabel.setVisible(false);
+        steam.setVisible(false);
         this.setVisible(true);
+        this.setLocation(20, 20);
         //gp.setVisible(true); <- same here
+        //this.setAlwaysOnTop(true);
 
     }
 
@@ -319,13 +323,18 @@ public class GUI extends javax.swing.JFrame {
 
 // elsewhere
         //setupLayout();
-        */
+         */
     }
 
     private void clickLabel(int i, int j) {
         if (isInRoute(i, j)) {
             if (isNotSelected(i, j)) {
                 //check if previous is selected
+                if(!isSelected(roomForMapSelection(i, j), "child")){
+                    //recursion to select all previous
+                    Room child = findChildRoom(i, j);
+                    clickLabel(child.getXYInMap()[0], child.getXYInMap()[1]);
+                }
                 if (isSelected(roomForMapSelection(i, j), "child")) {
                     String type = roomForMapSelection(i, j).getType();
                     if (type != null) {
@@ -336,6 +345,11 @@ public class GUI extends javax.swing.JFrame {
                 }
             } else {
                 //check if next is selected
+                if (!isSelected(roomForMapSelection(i, j), "parent")) {
+                    //recursion to select all next
+                    Room parent = findParentRoom(i, j);
+                    clickLabel(parent.getXYInMap()[0], parent.getXYInMap()[1]);
+                }
                 if (isSelected(roomForMapSelection(i, j), "parent")) {
                     String type = roomForMapSelection(i, j).getType();
                     if (type != null) {
@@ -445,6 +459,38 @@ public class GUI extends javax.swing.JFrame {
         return null;
     }
 
+    private Room findChildRoom(int x, int y) {
+        if (activeRoute != -1) {
+
+            for (Room room : map.getBestRoutes().get(activeRoute).getRoute()) {
+                if (room.getXYInMap()[0] == x && room.getXYInMap()[1] == y) {
+                    for (Room child : room.getNodes()) {
+                        if (child.getXYInMap()[0] != -1 && child.getXYInMap()[1] != -1) {
+                            return child;
+                        }
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    private Room findParentRoom(int x, int y) {
+        if (activeRoute != -1) {
+
+            for (Room room : map.getBestRoutes().get(activeRoute).getRoute()) {
+                if (room.getXYInMap()[0] == x && room.getXYInMap()[1] == y) {
+                    for (Room parent : room.getParents()) {
+                        if (parent.getXYInMap()[0] != -1 && parent.getXYInMap()[1] != -1) {
+                            return parent;
+                        }
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
     private void comp() {
 
         for (int j = 0; j < 57; j++) {
@@ -526,6 +572,10 @@ public class GUI extends javax.swing.JFrame {
         //revert back for ?whatever reasons?
         //Collections.reverse(map.getBestRoutes().get(routeID).getRoute());
         if (trackFromCurrentRoom) {
+            Integer[] topRoomXY = roomSelectionInXYMap.get(roomSelectionInXYMap.size()-1);
+            roomSelectionInXYMap = new ArrayList<>();
+            clickLabel(topRoomXY[0],topRoomXY[1]); //this will trigger recursion to all previous rooms
+            /*
             for (Integer[] rooms : roomSelectionInXYMap) {
                 String type = roomForMapSelection(rooms[0], rooms[1]).getType();
                 if (type != null) {
@@ -533,6 +583,7 @@ public class GUI extends javax.swing.JFrame {
                             .setIcon(iconC(type)); // change icon to heavy black
                 }
             }
+            */
         } else {
             roomSelectionInXYMap = new ArrayList<>();
         }
@@ -951,22 +1002,22 @@ public class GUI extends javax.swing.JFrame {
         informationPanel.add(routeInfoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 140, -1));
 
         enemyIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/enemy2.png"))); // NOI18N
-        informationPanel.add(enemyIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 191, -1, 34));
+        informationPanel.add(enemyIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 188, -1, 34));
 
         merchantIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/merchant2.png"))); // NOI18N
-        informationPanel.add(merchantIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 111, -1, 34));
+        informationPanel.add(merchantIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 108, -1, 34));
 
         eliteIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/elite2.png"))); // NOI18N
-        informationPanel.add(eliteIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 71, -1, 34));
+        informationPanel.add(eliteIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 68, -1, 34));
 
         restIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/rest2.png"))); // NOI18N
-        informationPanel.add(restIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 31, -1, 34));
+        informationPanel.add(restIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 31, -1, 34));
 
         unknownIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/unknown2.png"))); // NOI18N
-        informationPanel.add(unknownIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 151, -1, 34));
+        informationPanel.add(unknownIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 148, -1, 34));
 
         treasureIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/chest2.png"))); // NOI18N
-        informationPanel.add(treasureIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 231, -1, 34));
+        informationPanel.add(treasureIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 228, -1, 34));
 
         restInfo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         restInfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1014,22 +1065,22 @@ public class GUI extends javax.swing.JFrame {
         setPrioritiesPanel.add(titlePrio, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 5, 120, 20));
 
         enemyIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/enemy2.png"))); // NOI18N
-        setPrioritiesPanel.add(enemyIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 188, -1, 34));
+        setPrioritiesPanel.add(enemyIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 188, -1, 34));
 
         merchantIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/merchant2.png"))); // NOI18N
-        setPrioritiesPanel.add(merchantIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 108, -1, 34));
+        setPrioritiesPanel.add(merchantIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 108, -1, 34));
 
         eliteIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/elite2.png"))); // NOI18N
-        setPrioritiesPanel.add(eliteIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 68, -1, 34));
+        setPrioritiesPanel.add(eliteIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 68, -1, 34));
 
         restIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/rest2.png"))); // NOI18N
-        setPrioritiesPanel.add(restIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 31, -1, 34));
+        setPrioritiesPanel.add(restIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 31, -1, 34));
 
         treasureIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/chest2.png"))); // NOI18N
-        setPrioritiesPanel.add(treasureIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 228, -1, 34));
+        setPrioritiesPanel.add(treasureIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 228, -1, 34));
 
         unknownIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/unknown2.png"))); // NOI18N
-        setPrioritiesPanel.add(unknownIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 148, -1, 34));
+        setPrioritiesPanel.add(unknownIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 148, -1, 34));
 
         eliteCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
         eliteCombo.setSelectedIndex(1);
@@ -1039,7 +1090,7 @@ public class GUI extends javax.swing.JFrame {
                 comboActions(evt);
             }
         });
-        setPrioritiesPanel.add(eliteCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 68, 58, 34));
+        setPrioritiesPanel.add(eliteCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 68, 58, 34));
 
         restCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
         restCombo.setBorder(null);
@@ -1050,7 +1101,7 @@ public class GUI extends javax.swing.JFrame {
                 comboActions(evt);
             }
         });
-        setPrioritiesPanel.add(restCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 31, 58, 34));
+        setPrioritiesPanel.add(restCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 31, 58, 34));
 
         merchantCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
         merchantCombo.setSelectedIndex(2);
@@ -1060,7 +1111,7 @@ public class GUI extends javax.swing.JFrame {
                 comboActions(evt);
             }
         });
-        setPrioritiesPanel.add(merchantCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 108, 58, 34));
+        setPrioritiesPanel.add(merchantCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 108, 58, 34));
 
         unknownCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
         unknownCombo.setSelectedIndex(3);
@@ -1070,7 +1121,7 @@ public class GUI extends javax.swing.JFrame {
                 comboActions(evt);
             }
         });
-        setPrioritiesPanel.add(unknownCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 148, 58, 34));
+        setPrioritiesPanel.add(unknownCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 148, 58, 34));
 
         enemyCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
         enemyCombo.setSelectedIndex(4);
@@ -1080,7 +1131,7 @@ public class GUI extends javax.swing.JFrame {
                 comboActions(evt);
             }
         });
-        setPrioritiesPanel.add(enemyCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 188, 58, 34));
+        setPrioritiesPanel.add(enemyCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 188, 58, 34));
 
         skipElite.setToolTipText("Skip Elite if possible");
         skipElite.setOpaque(false);
@@ -1089,7 +1140,7 @@ public class GUI extends javax.swing.JFrame {
                 skipEliteActionPerformed(evt);
             }
         });
-        setPrioritiesPanel.add(skipElite, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 68, -1, 34));
+        setPrioritiesPanel.add(skipElite, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 68, -1, 34));
 
         startRouting.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/find.png"))); // NOI18N
         startRouting.setBorderPainted(false);
@@ -1101,7 +1152,7 @@ public class GUI extends javax.swing.JFrame {
                 startRoutingActionPerformed(evt);
             }
         });
-        setPrioritiesPanel.add(startRouting, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 224, 110, 33));
+        setPrioritiesPanel.add(startRouting, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 224, 110, 33));
 
         cardPanel.add(setPrioritiesPanel, "c2");
         setPrioritiesPanel.getAccessibleContext().setAccessibleName("");
@@ -1167,7 +1218,7 @@ public class GUI extends javax.swing.JFrame {
         changeRoutePanel.setOpaque(false);
         cardPanel.add(changeRoutePanel, "c4");
 
-        legend.add(cardPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 160, 260));
+        legend.add(cardPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 180, 260));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/legend2.png"))); // NOI18N
         legend.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

@@ -5,7 +5,11 @@
  */
 package STS;
 
+import com.sun.awt.AWTUtilities;
+import java.awt.Container;
 import java.awt.Desktop;
+import java.awt.Point;
+import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -19,8 +23,13 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComponent;
+import javax.swing.JDialog;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JRootPane;
+import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 
@@ -43,7 +52,13 @@ public class Loading extends javax.swing.JFrame {
 
         initComponents();
 
+        
+        AWTUtilities.setWindowOpaque(this, false);
+        this.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+        
         this.setVisible(true);
+        this.setAlwaysOnTop(true);
+        this.setLocationRelativeTo(null);
 
         loading = true;
     }
@@ -83,7 +98,7 @@ public class Loading extends javax.swing.JFrame {
     private File chooseLog() {
         JOptionPane.showMessageDialog(this,
                     "Please select the SlayTheSpire.log file located in your installation folder, \n"
-                            + "usually found in C:\\Program Files (x86)\\Steam\\steamapps\\common\\SlayTheSpire .",
+                            + "usually found in C:\\Program Files (x86)\\Steam\\steamapps\\common\\SlayTheSpire\\sendToDevs\\logs .",
                     "Help",
                     JOptionPane.INFORMATION_MESSAGE);
         File logFile = null;
@@ -276,42 +291,145 @@ public class Loading extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        close = new javax.swing.JButton();
+        minimize = new javax.swing.JButton();
+        gif = new javax.swing.JLabel();
+        text = new javax.swing.JLabel();
+        titleName = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
+        back = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(400, 230));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/load.gif"))); // NOI18N
+        close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/close.png"))); // NOI18N
+        close.setBorderPainted(false);
+        close.setContentAreaFilled(false);
+        close.setFocusPainted(false);
+        close.setPreferredSize(new java.awt.Dimension(25, 25));
+        close.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/map/closeHighlight.png"))); // NOI18N
+        close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 7, -1, -1));
 
-        jLabel2.setText("Waiting for Slay the Spire to produce Log file...");
+        minimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/min.png"))); // NOI18N
+        minimize.setBorderPainted(false);
+        minimize.setContentAreaFilled(false);
+        minimize.setFocusPainted(false);
+        minimize.setPreferredSize(new java.awt.Dimension(25, 25));
+        minimize.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/map/minHighlight.png"))); // NOI18N
+        minimize.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                minimizeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(minimize, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 7, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(72, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(105, 105, 105))
-        );
+        gif.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gif.setIcon(new javax.swing.ImageIcon(getClass().getResource("/loader.gif"))); // NOI18N
+        getContentPane().add(gif, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 400, 150));
+
+        text.setFont(new java.awt.Font("Trebuchet MS", 2, 14)); // NOI18N
+        text.setForeground(new java.awt.Color(234, 224, 208));
+        text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        text.setText("Waiting for Slay the Spire to produce Log file...");
+        text.setToolTipText("");
+        getContentPane().add(text, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 28, 390, 60));
+
+        titleName.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        titleName.setForeground(new java.awt.Color(234, 223, 208));
+        titleName.setText("AutoRoute Loader");
+        getContentPane().add(titleName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
+
+        title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/loadingBackTitle.png"))); // NOI18N
+        title.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                titleMouseDragged(evt);
+            }
+        });
+        title.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                titleMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                titleMouseReleased(evt);
+            }
+        });
+        getContentPane().add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/loadingBack.png"))); // NOI18N
+        back.setMaximumSize(new java.awt.Dimension(400, 230));
+        back.setMinimumSize(new java.awt.Dimension(400, 230));
+        back.setPreferredSize(new java.awt.Dimension(400, 230));
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_closeActionPerformed
+
+    private void minimizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimizeActionPerformed
+        // TODO add your handling code here:
+        this.setState(JFrame.ICONIFIED);
+    }//GEN-LAST:event_minimizeActionPerformed
+
+    
+    private boolean dontdragme = false;
+    private boolean dragLock = false;
+    private Point offset;
+    private JComponent target;
+    private Point start_drag;
+    private Point start_loc;
+    
+    public static JFrame getFrame(Container target) {
+        if (target instanceof JFrame) {
+            return (JFrame) target;
+        }
+        return getFrame(target.getParent());
+    }
+
+    private Point getScreenLocation(java.awt.event.MouseEvent e) {
+        Point cursor = e.getPoint();
+        Point target_location = this.title.getLocationOnScreen();
+        return new Point((int) (target_location.getX() + cursor.getX()),
+                (int) (target_location.getY() + cursor.getY()));
+    }
+    
+    private void titleMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_titleMousePressed
+        // TODO add your handling code here:
+        this.start_drag = this.getScreenLocation(evt);
+        this.start_loc = this.getFrame(this.title).getLocation();
+        dontdragme = false;
+    }//GEN-LAST:event_titleMousePressed
+
+    private void titleMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_titleMouseReleased
+        // TODO add your handling code here:
+        if (dragLock) {
+            dragLock = false;
+        }
+    }//GEN-LAST:event_titleMouseReleased
+
+    private void titleMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_titleMouseDragged
+        // TODO add your handling code here:
+        if (!dontdragme) {
+            Point current = this.getScreenLocation(evt);
+            Point offset = new Point((int) current.getX() - (int) start_drag.getX(),
+                    (int) current.getY() - (int) start_drag.getY());
+            JFrame frame = this.getFrame(title);
+            Point new_location = new Point(
+                    (int) (this.start_loc.getX() + offset.getX()), (int) (this.start_loc
+                    .getY() + offset.getY()));
+            frame.setLocation(new_location);
+        }
+    }//GEN-LAST:event_titleMouseDragged
 
     /**
      * @param args the command line arguments
@@ -349,7 +467,12 @@ public class Loading extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel back;
+    private javax.swing.JButton close;
+    private javax.swing.JLabel gif;
+    private javax.swing.JButton minimize;
+    private javax.swing.JLabel text;
+    private javax.swing.JLabel title;
+    private javax.swing.JLabel titleName;
     // End of variables declaration//GEN-END:variables
 }
