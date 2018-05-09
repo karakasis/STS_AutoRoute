@@ -5,6 +5,7 @@
  */
 package STS;
 
+import java.awt.Frame;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -30,8 +31,6 @@ public class Main {
         log = new ArrayList<>();
         Controller controller = new Controller(tailer,sts);
         
-        
-
     }
     
 }
