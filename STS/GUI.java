@@ -224,7 +224,7 @@ public class GUI extends javax.swing.JFrame {
         curLabel.setIcon(curL);
         gp.add(curLabel);
          */
-        cameraButton.setVisible(false);
+        cameraButton.setVisible(true);
         logo.setVisible(false);
         routeIDLabel.setVisible(false);
         this.setVisible(true);
@@ -761,11 +761,12 @@ public class GUI extends javax.swing.JFrame {
         availableRoutesIconLabel.setToolTipText("Multiple routes found!");
         getContentPane().add(availableRoutesIconLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 135, 30, 30));
 
+        cameraButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/map/camera.png"))); // NOI18N
         cameraButton.setToolTipText("Take a screenshot");
         cameraButton.setBorderPainted(false);
         cameraButton.setContentAreaFilled(false);
-        cameraButton.setEnabled(false);
         cameraButton.setFocusPainted(false);
+        cameraButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/map/cameraH.png"))); // NOI18N
         cameraButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cameraButtonActionPerformed(evt);
@@ -1645,7 +1646,9 @@ public class GUI extends javax.swing.JFrame {
 
     private void cameraButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cameraButtonActionPerformed
         // TODO add your handling code here:
+        cameraButton.setVisible(false);
         screenshot();
+        cameraButton.setVisible(true);
     }//GEN-LAST:event_cameraButtonActionPerformed
 
     private void leftLabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftLabelActionPerformed
