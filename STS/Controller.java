@@ -25,7 +25,7 @@ public class Controller {
         _tObj = new Tail();
         _tObj.setUpTailer(_load.getLogFile(), this);
         
-        _tObj.actionIsComing();
+        //_tObj.actionIsComing();
         //_load.startSlayTheSpireSTEAM();
     }
     
