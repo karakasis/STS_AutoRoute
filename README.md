@@ -59,7 +59,8 @@
   *Some final words,*
   
     I am a pre graduate Student of Computer Science and this project is far from being professional or completed.
-    **I am no longer playing this game so if any you find any bug or any change in the game messes up with the code let me know and I       will try to fix it. **
+    **I am no longer playing this game so if any you find any bug or any change in the game messes up with the code let me know and I
+    will try to fix it. **
     As far as future update of this, I am not aware at this point, since I am in 
     university and I might not find time to update. If anyone is interested in helping, improving or anything on this project let me
     know!
