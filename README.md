@@ -11,8 +11,6 @@
 
 ## Launch
 
-  (No need for restart anymore just look at UPDATE#2 below.)
-  
 - Run STS_AutoRoute.exe or STS_AutoRoute.jar (Java required)
 - Select this file : SlayTheSpire.log located within your Steam folder. 
 **C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\sendToDevs\logs\SlayTheSpire.log**
