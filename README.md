@@ -12,13 +12,12 @@
   (No need for restart anymore just look at UPDATE#2 below.)
   
 - Run STS_AutoRoute.exe or STS_AutoRoute.jar (Java required)
-- Select this file : SlayTheSpire.log located within your Steam folder. (BETA: \sendToDevs\logs\SlayTheSpire.log)
+- Select this file : SlayTheSpire.log located within your Steam folder. 
+**C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\sendToDevs\logs\SlayTheSpire.log**
 - Open Slay the Spire and start a new run.
-- From the moment you see the map of the run, close the game and a pop up will appear. 
-- Load the new Layout on the app, and then open the game back either from Steam or from the top left Steam icon.
+- A pop up will appear, asking to load the layout, click yes.
 - Optimize preferences and find route.
-- After every boss kill you will have to repeat steps 4-5. (Or wait until log is refreshed but that would take a while)
-(If you delete log.txt created within the root folder of the .jar then step 2 will repeat in the next launch.)
+- After you finish a run and start a new one, a new layout will ask to get loaded.
 
 ## Support me
 
@@ -56,34 +55,12 @@
   pop-up on the left of your screen with the Slay the Spire map icon and 2 arrows. You can change the routes from the arrows or from the
   Settings icon > Change Route.  
   
-  ## Big update
-
-  UPDATE #2
-  Everything runs smoothly! I can't beleive it works properly now. BETA or Regular branch just update the log file path to 
-  
-  
-  **C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\sendToDevs\logs\SlayTheSpire.log**
-  
-  and no need for restart, everything is automatic now! Have fun.
-  
-  UPDATE #1
-  Great news!!
-  Looks like the issue with the log files is all gone now. If you are in the beta the working log SlayTheSpire.log
-  is located in your root Steam folder 
-  
-  C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\sendToDevs\logs\SlayTheSpire.log
-  
-  Make sure to delete your old setting log.txt, and replace with the new path above!
-  No restarts are needed! 
   
   *Some final words,*
   
-    I am a post graduate Student of Computer Science and this project is far from being professional or completed. Just an attempt of
-    mine, honing my skills in Java and having fun. I have been using this app for some days now and it can be relaxing in some
-    situations when I am too lazy to plan my route. As far as future update of this, I am not aware at this point, since I am in 
+    I am a pre graduate Student of Computer Science and this project is far from being professional or completed.
+    **I am no longer playing this game so if any you find any bug or any change in the game messes up with the code let me know and I       will try to fix it. **
+    As far as future update of this, I am not aware at this point, since I am in 
     university and I might not find time to update. If anyone is interested in helping, improving or anything on this project let me
     know!
-    
-    Buggy approach : My knowledge goes as far as creating this and playing around with the log files to make it happen. If there is any
-    other possible way to fix the open/close thing I would be more than happy to review .
    
