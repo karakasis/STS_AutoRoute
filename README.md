@@ -1,7 +1,7 @@
 # STS_AutoRoute
 *Assisting program written on Java for [Slay the Spire](http://store.steampowered.com/app/646570/Slay_the_Spire/).*
 
-*Visit Releases Tab for the latest Version, currently May 9th 2018.*
+*Get the [latest Version](https://github.com/karakasis/STS_AutoRoute/releases/tag/v1.2), updated May 9th 2018.*
 
 ![alt text](https://raw.githubusercontent.com/karakasis/STS_AutoRoute/master-project/new_images/tutorial/STS%20Screenshots/2.png)
 ![alt text](https://raw.githubusercontent.com/karakasis/STS_AutoRoute/master-project/new_images/tutorial/STS%20Screenshots/1.png)
